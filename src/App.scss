@@ -1,0 +1,13 @@
+input {
+  font-family: "SeogeUI";
+  font-weight: 400;
+}
+form {
+  input {
+    margin: 0px !important;
+  }
+  .error-text {
+    font-size: 0.8rem;
+    color: #F44336;
+  }
+}
