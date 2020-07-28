@@ -30,8 +30,8 @@ function Header(props) {
   return (
     <header className="row valign-wrapper mb-0">
       <div className="col s5 offset-s1 logo">
-        <i className="fa fa-medium mr-10" aria-hidden="true"></i>
-        <span>Medium</span>
+        <i className="fa fa-book mr-10" aria-hidden="true"></i>
+        <span>Read Articles</span>
       </div>
       {!isLoggedIn && (
         <div className="col s1 offset-s4 actions-text">
