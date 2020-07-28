@@ -1,4 +1,7 @@
 .main {
+  .modal{
+    width: 40%;
+  }
   .summary-heading {
     font-weight: 600;
     font-size: 70px;
@@ -59,7 +62,7 @@
     }
     .popup-link {
       text-decoration: none;
-      color: #26a69a;
+      color: #294E80;
       &:hover {
         color: #039be5;
       }
