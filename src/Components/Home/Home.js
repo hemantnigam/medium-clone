@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-script-url */
-import React, { useEffect } from "react";
+import React from "react";
 import "./Home.scss";
 import ArticleList from "../ArticleList/ArticleList";
 import Sidebar from "../Sidebar/Sidebar";
@@ -12,20 +12,17 @@ import AddArticlePopUp from "../AddArticlePopUp/AddArticlePopUp";
 
 function Home() {
   let userDetails = useSelector((state) => state.userDetails.profile);
-  let articlePopupRef = React.createRef();
 
   document.addEventListener("DOMContentLoaded", function () {
     var elem = document.getElementById("add-article");
-    M.Modal.init(elem, {});
+    M.Modal.init(elem);
   });
 
   const openAddArticlePop = () => {
     var instance = M.Modal.getInstance(document.getElementById("add-article"));
     instance.open();
   };
-  useEffect(() => {
-    console.log(articlePopupRef);
-  });
+
   return (
     <div className="row home m-20">
       <div className="col s7 offset-s1 feed-section">
@@ -94,7 +91,7 @@ function Home() {
       >
         <i className="fa fa-plus" aria-hidden="true"></i>
       </a>
-      <AddArticlePopUp ref={articlePopupRef} />
+      <AddArticlePopUp />
     </div>
   );
 }

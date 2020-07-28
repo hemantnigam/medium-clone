@@ -102,11 +102,18 @@ function Article({ article, isArticleFavourite, index, deleteArticle }) {
         {userDetails &&
           userDetails.username &&
           article.author.username === userDetails.username && (
-            <span onClick={()=>{
-              deleteArticle(article.slug);
-            }}>
-              <i className="fa fa-trash" aria-hidden="true"></i>
-            </span>
+            <React.Fragment>
+              <span onClick={() => {}}>
+                <i className="fa fa-pencil" aria-hidden="true"></i>
+              </span>
+              <span
+                onClick={() => {
+                  deleteArticle(article.slug);
+                }}
+              >
+                <i className="fa fa-trash" aria-hidden="true"></i>
+              </span>
+            </React.Fragment>
           )}
       </div>
     </div>

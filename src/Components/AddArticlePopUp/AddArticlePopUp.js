@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-script-url */
-import React, { useState } from "react";
+import React from "react";
 import "./AddArticlePopUp.scss";
 import M from "materialize-css";
 import axios from "../../axios";
@@ -10,14 +10,13 @@ function AddArticlePopUp(props) {
   let titleRef = React.createRef();
   let descriptionRef = React.createRef();
   let bodyRef = React.createRef();
-  let [chipsdata, setChipsdata] = useState([]);
+  // let [chipsdata, setChipsdata] = useState([]);
 
   document.addEventListener("DOMContentLoaded", function () {
     var elems = document.getElementById("tag-list");
     M.Chips.init(elems, {
       placeholder: "Enter a tag",
-      secondaryPlaceholder: "+Tag",
-      data: chipsdata,
+      secondaryPlaceholder: "+Tag"
     });
   });
 
@@ -43,7 +42,7 @@ function AddArticlePopUp(props) {
         bodyRef.current.value = "";
         instance.chipsData = [];
         M.Modal.getInstance(document.getElementById("add-article")).close();
-        setChipsdata([]);
+        // setChipsdata([]);
         props.history.push(props.location.pathName);
       })
       .catch((err) => console.log(err));
@@ -88,7 +87,7 @@ function AddArticlePopUp(props) {
             </div>
             <div className="row">
               <div className="input-field col s12">
-                <div class="chips chips-placeholder" id="tag-list"></div>
+                <div className="chips chips-placeholder" id="tag-list"></div>
               </div>
             </div>
           </form>
